@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Domus Architectus | Anna Princess Architect Official Portfolio</title>
+    <link rel="icon" type="image/png" href="favicon.png">    
+<style>
+        /* Новая дизайн-система: Имперский розовый и благородное золото */
+        :root {
+            --bg-color:#e68fa7; /* Нежный розовый фон */
+            --card-bg: #1a1a1a;   /* Контрастный темный фон для карточек, чтобы золото "горело" */
+            --text-gold: linear-gradient(135deg, #fce881 0%, #cba135 50%, #946e19 100%);
+            --flat-gold: #d4af37; /* Плоский золотой цвет для мелкого текста */
+            --text-light: #ffffff;
+            --grid-line: rgba(212, 175, 55, 0.3); /* Золотистые полупрозрачные линии сетки */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        /* Контейнер-сетка в архитектурном стиле */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-left: 1px solid var(--grid-line);
+            border-right: 1px solid var(--grid-line);
+            padding: 0 40px;
+        }
+
+        /* Шапка сайта (Header) */
+        header {
+            text-align: center;
+            padding: 40px 0 60px 0;
+            border-bottom: 1px solid var(--grid-line);
+        }
+
+        /* Интеграция вашего герба */
+        .brand-logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.15));
+        }
+
+        .brand-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            /* Эффект золотого напыления на тексте */
+            background: var(--text-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .brand-subtitle {
+            font-size: 1.2rem;
+            color: #333333;
+            font-style: italic;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Блок "О проекте" (Story) */
+        .story-section {
+            padding: 60px 0;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            border-bottom: 1px solid var(--grid-line);
+        }
+
+        .story-text {
+            font-size: 1.25rem;
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        /* Галерея работ (Grid) */
+        .gallery-title {
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 60px 0 30px 0;
+            text-align: center;
+            background: var(--text-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gallery-grid {
+            display: block;
+            text-align: center;
+        }
+
+        .artwork-card {
+            display: inline-block;
+            width: 30%;
+            min-width: 280px;
+            margin: 1.5%;
+            background: var(--card-bg); /* Темная подложка премиально выделяет рисунки */
+            border: 2px solid var(--flat-gold);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            vertical-align: top;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .artwork-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(148, 110, 25, 0.3);
+        }
+
+        .artwork-image-container {
+            width: 100%;
+            height: 300px;
+            background-color: #222;
+            overflow: hidden;
+            border-bottom: 1px solid var(--grid-line);
+        }
+
+        .artwork-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .artwork-info {
+            padding: 25px;
+        }
+
+        .artwork-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: var(--text-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .artwork-desc {
+            font-size: 0.95rem;
+            color: #cccccc;
+            margin-bottom: 20px;
+        }
+
+        /* Кнопка заказа мерча на Redbubble (Золотой слиток) */
+        .btn-shop {
+            display: block;
+            text-align: center;
+            background: var(--text-gold);
+            color: #1a1a1a;
+            text-decoration: none;
+            padding: 12px 15px;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            border: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn-shop:hover {
+            opacity: 0.9;
+        }
+
+        /* Подвал (Footer) и Кросс-маркетинговые ссылки */
+        footer {
+            margin-top: 80px;
+            padding: 40px 0;
+            border-top: 1px solid var(--grid-line);
+            text-align: center;
+            font-size: 0.95rem;
+            color: #333333;
+            font-weight: 500;
+        }
+
+        .ecosystem-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #000000;
+            text-decoration: none;
+            font-weight: 700;
+            border-bottom: 2px solid var(--flat-gold);
+            padding-bottom: 4px;
+            transition: color 0.3s ease;
+        }
+
+        .ecosystem-link:hover {
+            color: #444444;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Шапка -->
+        <header>
+            <!-- Подключение вашего фамильного герба проекта -->
+            <img src="gerb_anna.png" alt="Domus Architectus Coat of Arms" class="brand-logo">
+            <br>
+<div class="brand-title">Domus Architectus</div>            
+<div class="brand-title">Anna Princess Architect</div>
+            <br>
+            <div class="brand-subtitle">Fairytale Worlds & Future Architecture by an Anna Princess Architect</div>
+        </header>
+
+        <!-- Легенда бренда -->
+        <section class="story-section">
+            <p class="story-text">
+                Welcome to the digital lab of Anna. Here, childhood imagination meets architectural scale. 
+                Every artwork is a blueprint of a dream — from whimsical castles to futuristic space cities. 
+                This independent project is managed by her parents to preserve and share her unique creative vision with the world.
+            </p>
+        </section>
+
+        <!-- Галерея -->
+        <h2 class="gallery-title">Current Blueprints</h2>
+        <main class="gallery-grid">
+            
+            <!-- Карточка работы 1 -->
+            <div class="artwork-card">
+                <div class="artwork-image-container">
+                    <img src="artwork1.jpg" alt="Fairytale Castle" class="artwork-image">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-name">The Pink Citadel</div>
+                    <div class="artwork-desc">A sanctuary for fairy princesses, designed with pure geometric harmony.</div>
+                    <a href="#" target="_blank" class="btn-shop">Buy Print / Merch</a>
+                </div>
+            </div>
+
+            <!-- Карточка работы 2 -->
+            <div class="artwork-card">
+                <div class="artwork-image-container">
+                    <img src="artwork2.jpg" alt="Space Station" class="artwork-image">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-name">Nebula Eco-City</div>
+                    <div class="artwork-desc">Future orbital station layout with integrated vertical gardens.</div>
+                    <a href="#" target="_blank" class="btn-shop">Buy Print / Merch</a>
+                </div>
+            </div>
+
+            <!-- Карточка работы 3 -->
+            <div class="artwork-card">
+                <div class="artwork-image-container">
+                    <img src="artwork3.jpg" alt="Treehouse Sketch" class="artwork-image">
+                </div>
+                <div class="artwork-info">
+                    <div class="artwork-name">The Infinite Treehouse</div>
+                    <div class="artwork-desc">A multi-level structural blueprint for absolute green living.</div>
+                    <a href="#" target="_blank" class="btn-shop">Buy Print / Merch</a>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- Подвал и Связка Империи -->
+        <footer>
+            <p>&copy; 2026 Anna Princess Architect. All rights reserved.</p>
+            <p>Curated and protected by parents. Inspired by "A fundamento ad lucem".</p>
+            <br>
+            <p>Part of the digital empire:</p>
+            <!-- Сюда вставишь ссылку на свой сайт -->
+            <a href="https://arhantic.vercel.app" target="_blank" class="ecosystem-link">
+                Powered by Domus Architectus Ecosystem | Technical Director: The Resilience Architect
+            </a>
+        </footer>
+    </div>
+
+</body>
+</html>
