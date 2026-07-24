@@ -6,169 +6,194 @@
   <title>Принцесса - Архитектор | Domus Architectus</title>
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Точный цвет фона с герба
+            coatPink: '#E782A3',
+            // Золотые оттенки под металл герба
+            goldLight: '#F3E5AB',
+            goldBase: '#D4AF37',
+            goldDark: '#8C6D23',
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<!-- ИЗМЕНЕНО: Фон body теперь ярко-розовый, базовый текст - светло-золотой -->
-<body class="bg-pink-600 text-amber-100 font-sans antialiased selection:bg-purple-500 selection:text-white">
+<body class="bg-coatPink text-amber-950 font-sans antialiased selection:bg-amber-300 selection:text-amber-950">
 
-  <!-- ШАПКА / HERO -->
-  <!-- ИЗМЕНЕНО: Граница раздела заменена на золотую -->
-  <header class="max-w-4xl mx-auto px-6 pt-16 pb-12 text-center border-b border-amber-400/30">
-    <!-- ИЗМЕНЕНО: Бейдж проекта адаптирован под новую схему -->
-    <div class="inline-block px-3 py-1 mb-4 rounded-full bg-pink-700 border border-amber-400 text-amber-300 text-xs font-semibold uppercase tracking-wider">
-      Проект Domus Architectus
+  <!-- ШАПКА / HERO С ГЕРБОМ -->
+  <header class="max-w-4xl mx-auto px-6 pt-12 pb-10 text-center border-b border-amber-900/20">
+    
+    <!-- ГЕРБ АННЫ -->
+    <div class="w-48 sm:w-56 mx-auto mb-6 drop-shadow-2xl">
+      <img src="gerb_anna.png" alt="Герб Принцесса - Архитектор" class="w-full h-auto block mx-auto">
     </div>
-    <!-- ИЗМЕНЕНО: Заголовок теперь ярко-золотой -->
-    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-3 text-amber-300">
+
+    <!-- БЕЙДЖ СЕМЕЙНОГО ПРОЕКТА -->
+    <div class="inline-block px-4 py-1.5 mb-4 rounded-full bg-amber-950/10 border border-amber-900/30 text-amber-950 text-xs font-bold uppercase tracking-widest shadow-sm">
+      Domus Architectus
+    </div>
+
+    <h1 class="text-3xl sm:text-4xl font-black tracking-tight mb-2 text-amber-950">
       Принцесса - Архитектор
     </h1>
-    <!-- ИЗМЕНЕНО: Био теперь кремово-золотое -->
-    <p class="text-amber-100/90 text-base sm:text-lg max-w-xl mx-auto font-light leading-relaxed">
-      Искусство, ментальная стойкость и архитектура собственного будущего. Творческий дневник Анны.
+    <p class="text-amber-900/90 text-sm sm:text-base max-w-xl mx-auto font-medium leading-relaxed">
+      A Fundamento Ad Lucem • От фундамента к свету
     </p>
   </header>
 
-  <main class="max-w-4xl mx-auto px-6 py-12 space-y-20">
+  <main class="max-w-4xl mx-auto px-6 py-10 space-y-16">
 
-    <!-- 1. БЛОК: 10 МЕНТАЛЬНЫХ ЗАПОВЕДЕЙ -->
+    <!-- 1. 10 ЗАПОВЕДЕЙ ВНУТРЕННЕЙ АРХИТЕКТУРЫ -->
     <section id="commandments" class="space-y-6">
-      <div class="text-center max-w-xl mx-auto mb-10">
-        <!-- ИЗМЕНЕНО: Заголовок и подзаголовок золотые -->
-        <h2 class="text-2xl font-bold text-amber-300 mb-2">10 Заповедей Внутренней Архитектуры</h2>
-        <p class="text-sm text-amber-100/90">Алгоритмы мышления от Анны для тех, кто строит себя сам.</p>
+      <div class="text-center max-w-xl mx-auto mb-8">
+        <h2 class="text-2xl font-bold text-amber-950 mb-1">10 Заповедей Внутренней Архитектуры</h2>
+        <p class="text-xs text-amber-900/80 font-medium">Алгоритмы мышления и настройки фокуса от Анны</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         
-        <!-- КАРТОЧКА ЗАПОВЕДИ (Базовая для всех) -->
-        <!-- ИЗМЕНЕНО: Фон карточки темнее, граница золотая -->
-        <div class="p-5 rounded-2xl bg-pink-700 border border-amber-400/50 transition hover:shadow-lg hover:shadow-amber-400/20">
+        <!-- Карточка 1 -->
+        <div class="p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 shadow-sm hover:shadow-md transition">
           <div class="flex items-center gap-3 mb-2">
-            <!-- ИЗМЕНЕНО: Номер ярко-золотой на темном розовом -->
-            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-pink-900 text-amber-300 font-bold text-sm">1</span>
-            <h3 class="font-bold text-base text-amber-300">Карта — это не территория</h3>
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-amber-950 text-goldLight font-bold text-xs shadow">1</span>
+            <h3 class="font-bold text-sm text-amber-950">Карта — это не территория</h3>
           </div>
-          <p class="text-xs text-amber-100 leading-relaxed">Оценка за контрольную или чужое мнение — это лишь чье-то представление, а не твоя реальная ценность и потенциал.</p>
+          <p class="text-xs text-amber-950/90 leading-relaxed font-medium">Оценка за контрольную или чужое мнение — это лишь чье-то представление, а не твоя реальная ценность и потенциал.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-pink-700 border border-amber-400/50 transition hover:shadow-lg hover:shadow-amber-400/20">
+        <!-- Карточка 2 -->
+        <div class="p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 shadow-sm hover:shadow-md transition">
           <div class="flex items-center gap-3 mb-2">
-            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-pink-900 text-amber-300 font-bold text-sm">2</span>
-            <h3 class="font-bold text-base text-amber-300">Ошибок нет, есть только опыт</h3>
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-amber-950 text-goldLight font-bold text-xs shadow">2</span>
+            <h3 class="font-bold text-sm text-amber-950">Ошибок нет, есть только опыт</h3>
           </div>
-          <p class="text-xs text-amber-100 leading-relaxed">Испорченный лист или неудачный штрих — это не провал, а обратная связь. Каждая «ошибка» учит делать точнее.</p>
+          <p class="text-xs text-amber-950/90 leading-relaxed font-medium">Испорченный лист или неудачный штрих — это не провал, а обратная связь. Каждая «ошибка» учит делать точнее.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-pink-700 border border-amber-400/50 transition hover:shadow-lg hover:shadow-amber-400/20">
+        <!-- Карточка 3 -->
+        <div class="p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 shadow-sm hover:shadow-md transition">
           <div class="flex items-center gap-3 mb-2">
-            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-pink-900 text-amber-300 font-bold text-sm">3</span>
-            <h3 class="font-bold text-base text-amber-300">Смысл общения — в реакции</h3>
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-amber-950 text-goldLight font-bold text-xs shadow">3</span>
+            <h3 class="font-bold text-sm text-amber-950">Смысл общения — в реакции</h3>
           </div>
-          <p class="text-xs text-amber-100 leading-relaxed">Важно не только то, что ты сказала, но и как тебя поняли. Учись доносить свои мысли так, чтобы тебя слышали.</p>
+          <p class="text-xs text-amber-950/90 leading-relaxed font-medium">Важно не только то, что ты сказала, но и как тебя поняли. Учись доносить свои мысли так, чтобы тебя слышали.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-pink-700 border border-amber-400/50 transition hover:shadow-lg hover:shadow-amber-400/20">
+        <!-- Карточка 4 -->
+        <div class="p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 shadow-sm hover:shadow-md transition">
           <div class="flex items-center gap-3 mb-2">
-            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-pink-900 text-amber-300 font-bold text-sm">4</span>
-            <h3 class="font-bold text-base text-amber-300">У тебя уже есть все ресурсы</h3>
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-amber-950 text-goldLight font-bold text-xs shadow">4</span>
+            <h3 class="font-bold text-sm text-amber-950">У тебя уже есть все ресурсы</h3>
           </div>
-          <p class="text-xs text-amber-100 leading-relaxed">Всё необходимая уверенность, фокус и вдохновение уже внутри. Нужно лишь научиться правильно их включать.</p>
+          <p class="text-xs text-amber-950/90 leading-relaxed font-medium">Вся необходимая уверенность, фокус и вдохновение уже внутри. Нужно лишь научиться правильно их включать.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-pink-700 border border-amber-400/50 transition hover:shadow-lg hover:shadow-amber-400/20">
+        <!-- Карточка 5 -->
+        <div class="p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 shadow-sm hover:shadow-md transition">
           <div class="flex items-center gap-3 mb-2">
-            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-pink-900 text-amber-300 font-bold text-sm">5</span>
-            <h3 class="font-bold text-base text-amber-300">Якорение на успех</h3>
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-amber-950 text-goldLight font-bold text-xs shadow">5</span>
+            <h3 class="font-bold text-sm text-amber-950">Якорение на успех</h3>
           </div>
-          <p class="text-xs text-amber-100 leading-relaxed">Создавай свои «триггеры состояния»: любимый трек, запах или жест, которые мгновенно включают режим высокой концентрации.</p>
+          <p class="text-xs text-amber-950/90 leading-relaxed font-medium">Создавай свои «триггеры состояния»: любимый трек, запах или жест, которые мгновенно включают режим концентрации.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-pink-700 border border-amber-400/50 transition hover:shadow-lg hover:shadow-amber-400/20">
+        <!-- Карточка 6 -->
+        <div class="p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 shadow-sm hover:shadow-md transition">
           <div class="flex items-center gap-3 mb-2">
-            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-pink-900 text-amber-300 font-bold text-sm">6</span>
-            <h3 class="font-bold text-base text-amber-300">Управляй Внутренним Критиком</h3>
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-amber-950 text-goldLight font-bold text-xs shadow">6</span>
+            <h3 class="font-bold text-sm text-amber-950">Управляй Внутренним Критиком</h3>
           </div>
-          <p class="text-xs text-amber-100 leading-relaxed">Сделай голос сомневающегося «внутреннего критиканта» смешным или мультяшным — и он потеряет над тобой силу.</p>
+          <p class="text-xs text-amber-950/90 leading-relaxed font-medium">Сделай голос сомневающегося «внутреннего критика» смешным или мультяшным — и он потеряет над тобой силу.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-pink-700 border border-amber-400/50 transition hover:shadow-lg hover:shadow-amber-400/20">
+        <!-- Карточка 7 -->
+        <div class="p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 shadow-sm hover:shadow-md transition">
           <div class="flex items-center gap-3 mb-2">
-            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-pink-900 text-amber-300 font-bold text-sm">7</span>
-            <h3 class="font-bold text-base text-amber-300">Правило микро-шагов</h3>
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-amber-950 text-goldLight font-bold text-xs shadow">7</span>
+            <h3 class="font-bold text-sm text-amber-950">Правило микро-шагов</h3>
           </div>
-          <p class="text-xs text-amber-100 leading-relaxed">Большая картина или сложный проект строятся по одному штриху. Разбивай любую гигантскую задачу на простые шаги.</p>
+          <p class="text-xs text-amber-950/90 leading-relaxed font-medium">Большая картина или сложный проект строятся по одному штриху. Разбивай любую гигантскую задачу на простые шаги.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-pink-700 border border-amber-400/50 transition hover:shadow-lg hover:shadow-amber-400/20">
+        <!-- Карточка 8 -->
+        <div class="p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 shadow-sm hover:shadow-md transition">
           <div class="flex items-center gap-3 mb-2">
-            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-pink-900 text-amber-300 font-bold text-sm">8</span>
-            <h3 class="font-bold text-base text-amber-300">Гибкость — это сила</h3>
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-amber-950 text-goldLight font-bold text-xs shadow">8</span>
+            <h3 class="font-bold text-sm text-amber-950">Гибкость — это сила</h3>
           </div>
-          <p class="text-xs text-amber-100 leading-relaxed">Тот, кто умеет менять подход и адаптироваться, всегда получает лучший результат — и в арте, и в учебе.</p>
+          <p class="text-xs text-amber-950/90 leading-relaxed font-medium">Тот, кто умеет менять подход и адаптироваться, всегда получает лучший результат — и в арте, и в учебе.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-pink-700 border border-amber-400/50 transition hover:shadow-lg hover:shadow-amber-400/20">
+        <!-- Карточка 9 -->
+        <div class="p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 shadow-sm hover:shadow-md transition">
           <div class="flex items-center gap-3 mb-2">
-            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-pink-900 text-amber-300 font-bold text-sm">9</span>
-            <h3 class="font-bold text-base text-amber-300">Состояние определяет результат</h3>
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-amber-950 text-goldLight font-bold text-xs shadow">9</span>
+            <h3 class="font-bold text-sm text-amber-950">Состояние определяет результат</h3>
           </div>
-          <p class="text-xs text-amber-100 leading-relaxed">Не садись за работу в уставшем или злом состоянии. Сначала приведи в порядок тело и дыхание — потом твори.</p>
+          <p class="text-xs text-amber-950/90 leading-relaxed font-medium">Не садись за работу в уставшем состоянии. Сначала приведи в порядок тело и дыхание — потом твори.</p>
         </div>
 
-        <div class="p-5 rounded-2xl bg-pink-700 border border-amber-400/50 transition hover:shadow-lg hover:shadow-amber-400/20">
+        <!-- Карточка 10 -->
+        <div class="p-4 rounded-2xl bg-white/20 backdrop-blur-md border border-white/40 shadow-sm hover:shadow-md transition">
           <div class="flex items-center gap-3 mb-2">
-            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-pink-900 text-amber-300 font-bold text-sm">10</span>
-            <h3 class="font-bold text-base text-amber-300">Ты — Главный Архитектор</h3>
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-amber-950 text-goldLight font-bold text-xs shadow">10</span>
+            <h3 class="font-bold text-sm text-amber-950">Ты — Главный Архитектор</h3>
           </div>
-          <p class="text-xs text-amber-100 leading-relaxed">Твой день, твой стиль и твое будущее создаются твоим выбором прямо сейчас. Проектируй их осознанно.</p>
+          <p class="text-xs text-amber-950/90 leading-relaxed font-medium">Твой день, твой стиль и твое будущее создаются твоим выбором прямо сейчас. Проектируй их осознанно.</p>
         </div>
 
       </div>
     </section>
 
-    <!-- 2. БЛОК: TIKTOK КАНАЛ -->
-    <!-- ИЗМЕНЕНО: Фон блока темнее розовый, граница золотая -->
-    <section id="tiktok" class="bg-pink-700 border-2 border-amber-400 rounded-3xl p-8 text-center space-y-6 shadow-xl shadow-pink-900/50">
+    <!-- 2. TIKTOK БЛОК -->
+    <section id="tiktok" class="bg-amber-950 text-goldLight rounded-3xl p-8 text-center space-y-5 shadow-2xl">
       <div class="max-w-md mx-auto">
-        <!-- ИЗМЕНЕНО: Заголовок и текст золотые -->
-        <h2 class="text-2xl font-bold text-amber-300 mb-2">Полезный TikTok</h2>
-        <p class="text-amber-100/90 text-sm mb-6">Разборы туториалов, процесс создания рисунков и применение заповедей на практике.</p>
+        <h2 class="text-2xl font-bold mb-2">Полезный TikTok</h2>
+        <p class="text-amber-200/80 text-xs mb-6">Туториалы, процесс создания рисунков и применение заповедей на практике.</p>
         
-        <!-- ИЗМЕНЕНО: Кнопка пурпурная для контраста, текст золотой -->
         <a href="https://www.tiktok.com/@YOUR_TIKTOK_USERNAME" target="_blank" rel="noopener noreferrer" 
-           class="inline-flex items-center gap-3 px-8 py-4 bg-purple-700 hover:bg-purple-600 text-amber-100 font-bold rounded-2xl transition shadow-lg shadow-purple-900/50">
+           class="inline-flex items-center gap-3 px-8 py-3.5 bg-amber-600 hover:bg-amber-500 text-amber-950 font-bold rounded-2xl transition shadow-lg">
           <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.525 2.015a.536.536 0 0 0-.525.531v14.004a3.81 3.81 0 1 1-3.81-3.81c.238 0 .473.023.702.067a.537.537 0 0 0 .633-.527V8.583a.536.536 0 0 0-.435-.526 8.352 8.352 0 0 0-1.286-.098C3.89 7.959 0 11.85 0 16.65 0 21.45 3.89 25.34 8.69 25.34c4.8 0 8.69-3.89 8.69-8.69V9.289a11.13 11.13 0 0 0 6.082 1.777.536.536 0 0 0 .538-.536V6.828a.536.536 0 0 0-.376-.513 7.08 7.08 0 0 1-4.884-4.223.538.538 0 0 0-.513-.377h-5.702z"/></svg>
           Перейти в TikTok Канал
         </a>
       </div>
     </section>
 
-    <!-- 3. БЛОК: ГАЛЕРЕЯ РИСУНКОВ -->
+    <!-- 3. ГАЛЕРЕЯ РИСУНКОВ (.PNG) -->
     <section id="gallery">
-      <div class="flex items-center justify-between mb-8 pb-4 border-b border-amber-400/30">
+      <div class="flex items-center justify-between mb-6 pb-2 border-b border-amber-900/20">
         <div>
-          <!-- ИЗМЕНЕНО: Заголовок и текст золотые -->
-          <h2 class="text-2xl font-bold text-amber-300">Галерея Иллюстраций</h2>
-          <p class="text-amber-100/80 text-xs mt-1">Творческий дневник Принцессы-Архитектора.</p>
+          <h2 class="text-2xl font-bold text-amber-950">Галерея Иллюстраций</h2>
+          <p class="text-amber-900/80 text-xs mt-1">Творческое портфолио Анны</p>
         </div>
       </div>
 
       <!-- Сетка рисунков -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         
         <!-- Арт 1 -->
-        <!-- ИЗМЕНЕНО: Рамка золотая, фон темный -->
-        <div class="group relative overflow-hidden rounded-2xl bg-pink-800 border-2 border-amber-400/50 aspect-square transition hover:border-amber-400">
-          <img src="https://via.placeholder.com/600x600/f06292/fff?text=Art+1" alt="Рисунок 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="group relative overflow-hidden rounded-2xl bg-amber-950/10 border border-white/40 aspect-square shadow-md">
+          <img src="images/art1.png" alt="Рисунок 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
         </div>
 
         <!-- Арт 2 -->
-        <div class="group relative overflow-hidden rounded-2xl bg-pink-800 border-2 border-amber-400/50 aspect-square transition hover:border-amber-400">
-          <img src="https://via.placeholder.com/600x600/f06292/fff?text=Art+2" alt="Рисунок 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="group relative overflow-hidden rounded-2xl bg-amber-950/10 border border-white/40 aspect-square shadow-md">
+          <img src="images/art2.png" alt="Рисунок 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
         </div>
 
         <!-- Арт 3 -->
-        <div class="group relative overflow-hidden rounded-2xl bg-pink-800 border-2 border-amber-400/50 aspect-square transition hover:border-amber-400">
-          <img src="https://via.placeholder.com/600x600/f06292/fff?text=Art+3" alt="Рисунок 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="group relative overflow-hidden rounded-2xl bg-amber-950/10 border border-white/40 aspect-square shadow-md">
+          <img src="images/art3.png" alt="Рисунок 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+
+        <!-- Арт 4 -->
+        <div class="group relative overflow-hidden rounded-2xl bg-amber-950/10 border border-white/40 aspect-square shadow-md">
+          <img src="images/art4.png" alt="Рисунок 4" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
         </div>
 
       </div>
@@ -176,10 +201,8 @@
 
   </main>
 
-  <!-- FOOTER -->
-  <!-- ИЗМЕНЕНО: Верхняя граница золотая, текст кремовый -->
-  <footer class="border-t border-amber-400/30 py-8 text-center text-xs text-amber-100/70">
-    <p>© 2026 Принцесса - Архитектор | Часть семейного проекта Domus Architectus</p>
+  <footer class="border-t border-amber-900/20 py-8 text-center text-xs text-amber-900/70 font-medium">
+    <p>© 2026 Принцесса - Архитектор | Domus Architectus</p>
   </footer>
 
 </body>
