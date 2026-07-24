@@ -1,338 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anna Princess Architect | Official Portfolio</title>
-    <style>
-        /* Дизайн-система: Точный цвет фона с нового герба и благородное золото */
-        :root {
-            --bg-color: #e68fa7; /* Фирменный имперский розовый */
-            --card-bg: #1a1a1a;   /* Контрастный темный для фокуса на рисунках */
-            --text-gold: linear-gradient(135deg, #fce881 0%, #cba135 50%, #946e19 100%);
-            --flat-gold: #d4af37; 
-            --text-light: #ffffff;
-            --grid-line: rgba(212, 175, 55, 0.25);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: #1a1a1a;
-            line-height: 1.6;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            border-left: 1px solid var(--grid-line);
-            border-right: 1px solid var(--grid-line);
-            padding: 0 40px;
-        }
-
-        header {
-            text-align: center;
-            padding: 40px 0 40px 0;
-            border-bottom: 1px solid var(--grid-line);
-        }
-
-        .brand-logo {
-            width: 180px;
-            height: auto;
-            margin-bottom: 25px;
-            filter: drop-shadow(0px 8px 16px rgba(0,0,0,0.2));
-        }
-
-        .brand-title {
-            font-size: 2.8rem;
-            font-weight: 800;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            background: var(--text-gold);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
-
-        .brand-subtitle {
-            font-size: 1.2rem;
-            color: #ffffff;
-            font-style: italic;
-            letter-spacing: 1px;
-            font-weight: 500;
-            text-shadow: 0px 1px 2px rgba(0,0,0,0.2);
-        }
-
-        .story-section {
-            padding: 40px 0;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            border-bottom: 1px solid var(--grid-line);
-        }
-
-        .story-text {
-            font-size: 1.25rem;
-            color: #ffffff;
-            font-weight: 500;
-            text-shadow: 0px 1px 2px rgba(0,0,0,0.15);
-        }
-
-        /* ТЕХНОЛОГИЯ ФИЛЬТРАЦИИ НА ЧИСТОМ CSS */
-        .filter-controller {
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .filter-label {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 5px;
-            background-color: rgba(26, 26, 26, 0.1);
-            border: 1px solid var(--flat-gold);
-            color: #ffffff;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        /* Скрытые радио-кнопки для управления разделами */
-        input[type="radio"] {
-            display: none;
-        }
-
-        /* Логика переключения активных табов */
-        #all:checked ~ .filter-controller label[for="all"],
-        #magic:checked ~ .filter-controller label[for="magic"],
-        #future:checked ~ .filter-controller label[for="future"],
-        #patterns:checked ~ .filter-controller label[for="patterns"],
-        #safe:checked ~ .filter-controller label[for="safe"] {
-            background: var(--text-gold);
-            color: #1a1a1a;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-
-        /* Отображение элементов в зависимости от выбора */
-        #magic:checked ~ .gallery-grid .artwork-card:not(.cat-magic),
-        #future:checked ~ .gallery-grid .artwork-card:not(.cat-future),
-        #patterns:checked ~ .gallery-grid .artwork-card:not(.cat-patterns),
-        #safe:checked ~ .gallery-grid .artwork-card:not(.cat-safe) {
-            display: none;
-        }
-
-        .gallery-grid {
-            display: block;
-            text-align: center;
-            min-height: 600px;
-        }
-
-        .artwork-card {
-            display: inline-block;
-            width: 30%;
-            min-width: 280px;
-            margin: 1.5%;
-            background: var(--card-bg);
-            border: 2px solid var(--flat-gold);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.25);
-            vertical-align: top;
-            text-align: left;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .artwork-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
-        }
-
-        .artwork-image-container {
-            width: 100%;
-            height: 300px;
-            background-color: #222;
-            overflow: hidden;
-            border-bottom: 1px solid var(--grid-line);
-        }
-
-        .artwork-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .artwork-info {
-            padding: 25px;
-        }
-
-        .artwork-tag {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: var(--flat-gold);
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .artwork-name {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            background: var(--text-gold);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .artwork-desc {
-            font-size: 0.95rem;
-            color: #cccccc;
-            margin-bottom: 20px;
-        }
-
-        .btn-shop {
-            display: block;
-            text-align: center;
-            background: var(--text-gold);
-            color: #1a1a1a;
-            text-decoration: none;
-            padding: 12px 15px;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
-            border: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .btn-shop:hover {
-            opacity: 0.9;
-        }
-
-        footer {
-            margin-top: 80px;
-            padding: 40px 0;
-            border-top: 1px solid var(--grid-line);
-            text-align: center;
-            font-size: 0.95rem;
-            color: #ffffff;
-            font-weight: 500;
-            text-shadow: 0px 1px 2px rgba(0,0,0,0.2);
-        }
-
-        .ecosystem-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 700;
-            border-bottom: 2px solid var(--flat-gold);
-            padding-bottom: 4px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Принцесса - Архитектор | Domus Architectus</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-purple-500 selection:text-white">
 
-    <div class="container">
+  <!-- ШАПКА / HERO -->
+  <header class="max-w-4xl mx-auto px-6 pt-16 pb-12 text-center border-b border-neutral-800/80">
+    <div class="inline-block px-3 py-1 mb-4 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-xs font-semibold uppercase tracking-wider">
+      Проект Domus Architectus
+    </div>
+    <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-3 bg-gradient-to-r from-white via-neutral-200 to-purple-400 bg-clip-text text-transparent">
+      Принцесса - Архитектор
+    </h1>
+    <p class="text-neutral-400 text-base sm:text-lg max-w-xl mx-auto font-light">
+      Галерея иллюстраций, ментальные алгоритмы для учебы и жизни, полезный контент для тех, кто строит себя сам.
+    </p>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-12 space-y-20">
+
+    <!-- 1. БЛОК: 10 МЕНТАЛЬНЫХ ЗАПОВЕДЕЙ (НЛП ЛАЙФХАКИ) -->
+    <section id="commandments" class="space-y-6">
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <h2 class="text-2xl font-bold text-white mb-2">10 Заповедей Внутренней Архитектуры</h2>
+        <p class="text-sm text-neutral-400">Правила мышления и фокусировки для школьников, художников и творцов.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         
-        <input type="radio" name="gallery-filter" id="all" checked>
-        <input type="radio" name="gallery-filter" id="magic">
-        <input type="radio" name="gallery-filter" id="future">
-        <input type="radio" name="gallery-filter" id="patterns">
-        <input type="radio" name="gallery-filter" id="safe">
-
-        <header>
-            <img src="Gerb.png" alt="Domus Architectus Coat of Arms" class="brand-logo">
-            <br>
-            <div class="brand-title">Anna Princess Architect</div>
-            <br>
-            <div class="brand-subtitle">Fairytale Worlds & Future Architecture by an 8-Year-Old Artist</div>
-        </header>
-
-        <section class="story-section">
-            <p class="story-text">
-                Welcome to the digital lab of Anna. Here, childhood imagination meets architectural scale. 
-                Every artwork is a blueprint of a dream. Managed by her parents to share her unique creative vision with the world.
-            </p>
-        </section>
-
-        <div class="filter-controller">
-            <label for="all" class="filter-label">All Blueprints</label>
-            <label for="magic" class="filter-label">Whimsical Magic</label>
-            <label for="future" class="filter-label">Future Cities</label>
-            <label for="patterns" class="filter-label">Kawaii Patterns</label>
-            <label for="safe" class="filter-label">Safe Places</label>
+        <div class="p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800 hover:border-purple-500/40 transition">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 font-bold text-sm">1</span>
+            <h3 class="font-bold text-base text-white">Карта — это не территория</h3>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed">Оценка за контрольную или чужое мнение — это лишь чье-то представление, а не твоя реальная ценность и потенциал.</p>
         </div>
 
-        <main class="gallery-grid">
-            
-            <div class="artwork-card cat-magic">
-                <div class="artwork-image-container">
-                    <img src="artwork1.jpg" alt="Fairytale Castle" class="artwork-image">
-                </div>
-                <div class="artwork-info">
-                    <div class="artwork-tag">Whimsical Magic</div>
-                    <div class="artwork-name">The Pink Citadel</div>
-                    <div class="artwork-desc">A sanctuary for fairy princesses, designed with pure geometric harmony.</div>
-                    <a href="ССЫЛКА_НА_REDBUBBLE" target="_blank" class="btn-shop">Buy Print / Merch</a>
-                </div>
-            </div>
+        <div class="p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800 hover:border-purple-500/40 transition">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 font-bold text-sm">2</span>
+            <h3 class="font-bold text-base text-white">Ошибок нет, есть только опыт</h3>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed">Испорченный лист или неудачный штрих — это не провал, а обратная связь. Каждая «ошибка» учит делать точнее.</p>
+        </div>
 
-            <div class="artwork-card cat-future">
-                <div class="artwork-image-container">
-                    <img src="artwork2.jpg" alt="Space Station" class="artwork-image">
-                </div>
-                <div class="artwork-info">
-                    <div class="artwork-tag">Future Cities</div>
-                    <div class="artwork-name">Nebula Eco-City</div>
-                    <div class="artwork-desc">Future orbital station layout with integrated vertical gardens.</div>
-                    <a href="ССЫЛКА_НА_REDBUBBLE" target="_blank" class="btn-shop">Buy Print / Merch</a>
-                </div>
-            </div>
+        <div class="p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800 hover:border-purple-500/40 transition">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 font-bold text-sm">3</span>
+            <h3 class="font-bold text-base text-white">Смысл общения — в реакции</h3>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed">Важно не только то, что ты сказала, но и как тебя поняли. Учись доносить свои мысли так, чтобы тебя слышали.</p>
+        </div>
 
-            <div class="artwork-card cat-patterns">
-                <div class="artwork-image-container">
-                    <img src="artwork3.jpg" alt="Pattern" class="artwork-image">
-                </div>
-                <div class="artwork-info">
-                    <div class="artwork-tag">Kawaii Patterns</div>
-                    <div class="artwork-name">Little Builders Panda</div>
-                    <div class="artwork-desc">Seamless texture featuring joyful panda architects building bright towers.</div>
-                    <a href="ССЫЛКА_НА_REDBUBBLE" target="_blank" class="btn-shop">Buy Print / Merch</a>
-                </div>
-            </div>
+        <div class="p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800 hover:border-purple-500/40 transition">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 font-bold text-sm">4</span>
+            <h3 class="font-bold text-base text-white">У тебя уже есть все ресурсы</h3>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed">Всё необходимая уверенность, фокус и вдохновение уже внутри. Нужно лишь научиться правильно их включать.</p>
+        </div>
 
-            <div class="artwork-card cat-safe">
-                <div class="artwork-image-container">
-                    <img src="artwork4.jpg" alt="Safe Place Room" class="artwork-image">
-                </div>
-                <div class="artwork-info">
-                    <div class="artwork-tag">Safe Places</div>
-                    <div class="artwork-name">The Quiet Oasis</div>
-                    <div class="artwork-desc">A soft, sun-drenched room sketch filled with books and peaceful thoughts.</div>
-                    <a href="ССЫЛКА_НА_REDBUBBLE" target="_blank" class="btn-shop">Buy Print / Merch</a>
-                </div>
-            </div>
+        <div class="p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800 hover:border-purple-500/40 transition">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 font-bold text-sm">5</span>
+            <h3 class="font-bold text-base text-white">Якорение на успех</h3>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed">Создавай свои «триггеры состояния»: любимый трек, запах или жест, которые мгновенно включают режим высокой концентрации.</p>
+        </div>
 
-        </main>
+        <div class="p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800 hover:border-purple-500/40 transition">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 font-bold text-sm">6</span>
+            <h3 class="font-bold text-base text-white">Управляй Внутренним Критиком</h3>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed">Сделай голос сомневающегося «внутреннего критиканта» смешным или мультяшным — и он потеряет над тобой силу.</p>
+        </div>
 
-        <footer>
-            <p>&copy; 2026 Anna Princess Architect. All rights reserved.</p>
-            <p>Curated and protected by parents. Inspired by "A fundamento ad lucem".</p>
-            <br>
-            <p>Part of the digital empire:</p>
-            <a href="ССЫЛКА_НА_ТВОЙ_САЙТ" target="_blank" class="ecosystem-link">
-                Powered by Domus Architectus Ecosystem | Technical Director: Architect Anticrisis
-            </a>
-        </footer>
-    </div>
+        <div class="p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800 hover:border-purple-500/40 transition">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 font-bold text-sm">7</span>
+            <h3 class="font-bold text-base text-white">Правило микро-шагов</h3>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed">Большая картина или сложный проект строятся по одному штриху. Разбивай любую гигантскую задачу на простые шаги.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800 hover:border-purple-500/40 transition">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 font-bold text-sm">8</span>
+            <h3 class="font-bold text-base text-white">Гибкость — это сила</h3>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed">Тот, кто умеет менять подход и адаптироваться, всегда получает лучший результат — и в арте, и в учебе.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800 hover:border-purple-500/40 transition">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 font-bold text-sm">9</span>
+            <h3 class="font-bold text-base text-white">Состояние определяет результат</h3>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed">Не садись за работу в уставшем или злом состоянии. Сначала приведи в порядок тело и дыхание — потом твори.</p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-neutral-900/60 border border-neutral-800 hover:border-purple-500/40 transition">
+          <div class="flex items-center gap-3 mb-2">
+            <span class="flex items-center justify-center w-7 h-7 rounded-lg bg-purple-500/20 text-purple-400 font-bold text-sm">10</span>
+            <h3 class="font-bold text-base text-white">Ты — Главный Архитектор</h3>
+          </div>
+          <p class="text-xs text-neutral-400 leading-relaxed">Твой день, твой стиль и твое будущее создаются твоим выбором прямо сейчас. Проектируй их осознанно.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2. БЛОК: TIKTOK КАНАЛ -->
+    <section id="tiktok" class="bg-neutral-900/40 border border-neutral-800 rounded-3xl p-8 text-center space-y-6">
+      <div class="max-w-md mx-auto">
+        <h2 class="text-2xl font-bold text-white mb-2">Полезный TikTok</h2>
+        <p class="text-neutral-400 text-sm mb-6">Разборы туториалов, процесс создания рисунков и применение заповедей на практике.</p>
+        
+        <a href="https://www.tiktok.com/@YOUR_TIKTOK_USERNAME" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-3 px-8 py-4 bg-purple-600 hover:bg-purple-500 text-white font-bold rounded-2xl transition shadow-lg shadow-purple-600/25">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.525 2.015a.536.536 0 0 0-.525.531v14.004a3.81 3.81 0 1 1-3.81-3.81c.238 0 .473.023.702.067a.537.537 0 0 0 .633-.527V8.583a.536.536 0 0 0-.435-.526 8.352 8.352 0 0 0-1.286-.098C3.89 7.959 0 11.85 0 16.65 0 21.45 3.89 25.34 8.69 25.34c4.8 0 8.69-3.89 8.69-8.69V9.289a11.13 11.13 0 0 0 6.082 1.777.536.536 0 0 0 .538-.536V6.828a.536.536 0 0 0-.376-.513 7.08 7.08 0 0 1-4.884-4.223.538.538 0 0 0-.513-.377h-5.702z"/></svg>
+          Перейти в TikTok Канал
+        </a>
+      </div>
+    </section>
+
+    <!-- 3. БЛОК: ГАЛЕРЕЯ РИСУНКОВ (После регистрации на PinkBus заменится на карточки товаров) -->
+    <section id="gallery">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-2xl font-bold text-white">Галерея Иллюстраций</h2>
+          <p class="text-neutral-400 text-xs mt-1">Скоро эти арты можно будет приобрести в виде мерча на PinkBus</p>
+        </div>
+      </div>
+
+      <!-- Сетка рисунков -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        
+        <!-- Арт 1 -->
+        <div class="group relative overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 aspect-square">
+          <img src="https://via.placeholder.com/600x600" alt="Рисунок 1" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+
+        <!-- Арт 2 -->
+        <div class="group relative overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 aspect-square">
+          <img src="https://via.placeholder.com/600x600" alt="Рисунок 2" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+
+        <!-- Арт 3 -->
+        <div class="group relative overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 aspect-square">
+          <img src="https://via.placeholder.com/600x600" alt="Рисунок 3" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-neutral-900 py-8 text-center text-xs text-neutral-500">
+    <p>© 2026 Принцесса - Архитектор | Часть семейного проекта Domus Architectus</p>
+  </footer>
 
 </body>
 </html>
